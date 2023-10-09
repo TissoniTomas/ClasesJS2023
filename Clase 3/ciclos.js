@@ -1,142 +1,86 @@
-// const nombre1 = prompt("Ingrese un nombre");
-// console.log(nombre1);
-//
-// const nombre2 = prompt("Ingrese un nombre");
-//
-// const nombre3 = prompt("Ingrese un nombre");
-//
-// const nombre4 = prompt("Ingrese un nombre");
+// FOR
+// for(let i = 10; i < 20; i = i+1){
 
-// ....
-
-/**
- * FOR
- */
-
-// for(let i = 10; i <= 20; i = i + 1) {
-//     console.log(i);
+// console.log("Hola");
 // }
-
-// console.log("Finaliza el for");
 
 // Pedir 10 nombres
-// let nombre = "";
-//
-// for(let i = 0; i < 5; i = i + 1) {
-//
-//     nombre = prompt("Ingrese un nombre");
-//     console.log(nombre);
-//
+// for(let i = 0; i < 10;  i = i + 1 ){
+//     const nombreUsuario = prompt("Ingrese su nombre");
+//     console.log(nombreUsuario);
 // }
 
-// Break
-// // Números pares
-// for(let i = 0; i <= 10; i = i + 2) {
-//
-//     if(i >= 5) {
+// // Numeros pares
+//  for(let i = 0; i < 10; i = i+ 2){
+//     if(i >= 5){
 //         break;
 //     }
-//
 //     console.log(i);
-// }
+//  }
 
-// // Números impares
-// for(let i = 1; i <= 10; i = i + 2) {
-//
-//     if(i > 5) {
+//  // Numeros impares
+//  for(let i = 1; i < 10; i = i+ 2){
+//     if(i >= 9){
 //         break;
 //     }
-//
 //     console.log(i);
-// }
+//  }
 
-// Continue
-// Números pares
-// for(let i = 0; i <= 10; i++) {
-//
-//     if(i % 2 === 0) {
+// Sentencia continue muestra numeros imapres
+// for(let i = 0; i < 10; i = i+ 1){
+//     if(i % 2 === 0){
 //         continue;
 //     }
-//
 //     console.log(i);
-// }
+//  }
 
-// Números pares
-// for(let i = 0; i <= 10; i++) {
-//
-//     if(i % 2 !== 0) {
+ 
+// // Sentencia continue muestra numeros apres
+// for(let i = 0; i < 10; i = i+ 1){
+//     if(i % 2 !== 0){
 //         continue;
 //     }
-//
 //     console.log(i);
-// }
-//
-// console.log("Finalizó el ciclo");
+//  }
 
-/**
- * WHILE
+ /*
+ WHILE
  */
 
-// // Pedir nombres
-// // Forma 1
-// let nombre = "";
-//
-// while(nombre !== "SALIR") {
-//
-//     nombre = prompt("Ingrese un nombre. Ingrese SALIR para no ingresar más");
-//
-//     if(nombre !== "SALIR") {
-//         console.log("El nombre que ingresó es: " + nombre);
+//  let nombre = "";
+// while(nombre !== "Salir"){
+//     nombre = prompt("Ingrese su nombre o Salir ");
+//     if(nombre !== "Salir"){
+
+//         alert ("Su nombre es " + nombre)
 //     }
-// }
-//
-// // Forma 2
-// let nombre = prompt("Ingrese un nombre. Ingrese SALIR para no ingresar más");
-//
-// while(nombre !== "SALIR") {
-//
-//     console.log("El nombre que ingresó es: " + nombre);
-//     nombre = prompt("Ingrese un nombre. Ingrese SALIR para no ingresar más");
-//
+
 // }
 
-// Contar de 1 a 10
+// Contar de 1 a 10 a traves de while
 // let i = 0;
-// while(i < 10) {
+// while (i < 10){
 //     console.log(i);
-//
-//     i = i + 1; // Forma 1
-//     // i++; // Forma 2
+
+//     i= i + 1;
 // }
 
-/**
- * DO WHILE
- */
+// /*
+// DO WHILE
+// */
 
-// Diferencias usando while
-// let nombre = prompt("Ingrese un nombre. Ingrese SALIR para no ingresar nada.");
-//
-// while(nombre !== "SALIR") {
-//
-//     console.log(nombre);
-//     nombre = prompt("Ingrese un nombre. Ingrese SALIR para no ingresar nada.");
-// }
-
-// Usando do while
 // let nombre = "";
-//
-// do {
-//     nombre = prompt("Ingrese un nombre. Ingrese SALIR para no ingresar nada.");
-//
-//     if(nombre !== "SALIR") {
-//         console.log(nombre);
-//     }
-//
-// } while(nombre !== "SALIR");
 
-/**
- * SWITCH
- */
+// do {
+//     nombre = prompt("Ingrese su nombre o Salir ");
+//     if(nombre !== "Salir"){
+
+//         alert ("Su nombre es " + nombre)
+//     }
+
+// } while(nombre !== "Salir")
+
+// SWITCH
 
 // // Pedimos la operación al usuario
 // let operacion = prompt("Ingrese la operación que quiere realizar. 1- Transferir. 2- Depositar. 0- SALIR");
