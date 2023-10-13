@@ -2,97 +2,54 @@
 
 // objeto literal
 
-const miAuto = {
-  marca: "Peugeot",
-  color: "Rojo",
-  modelo: "307",
-  kilometraje: 56000,
-  precio: "$10000",
-  vendido: false,
-};
-console.log(miAuto);
+// Objetos
 
-console.log(miAuto.color); // Mostrara la propiedad indicada en objeto.propiedad
-//otra manera
-console.log(miAuto["modelo"]);
+let nomhre ="Homero";
+let edad = "39";
+let calle = "Av Siempre Viva"
 
-// actualizo el precio
-miAuto.precio = "$5000";
+const persona1 = { nombre: "Homero", edad: "39", calle: "Av Siempre Viva",
 
-console.log(miAuto.precio);
-
-//funcion constructora
-
-function Computadora(tipo, marca, procesador, precio) {
-  this.tipo = tipo;
-  this.marca = marca;
-  this.procesador = procesador;
-  this.precio = precio;
-  this.detallesCompu = function(){
-    console.log(tipo + marca + procesador + precio);
-  }
 }
 
-const Compu1 = new Computadora("notebook", "HP", "Pentium GOLD", "$500 USD");
+console.log(persona1);
 
-console.log(Compu1);
+// Acceder al valor
+console.log(persona1.nombre);
+console.log(persona1.calle);
+console.log(persona1.edad);
 
-const Compu2 = new Computadora("Escritorio", "Lenovo", "I7 7700k", "$1000 USD");
-console.log(Compu2);
+// Asignar valores
 
-let tipoCompu = prompt("Ingrese el tipo de computadora");
-let marcaCompu = prompt("Ingrese la marca de la computadora");
-let procesadorCompu = prompt("Ingrese el procesador de la computadora");
-let precioCompu = prompt("Ingrese el precio de la computadora");
+console.log(persona1["nombre"] = "Marge");
+console.log(persona1.edad = 38);
 
-const Compu3 = new Computadora(
-  tipoCompu,
-  marcaCompu,
-  procesadorCompu,
-  precioCompu
-);
-console.log(Compu3);
+// Agregar valores
 
-alert(
-  "La computadora que solicito consta de una pc de tipo " +
-    tipoCompu +
-    " , de marca " +
-    marcaCompu +
-    ", con un procesador " +
-    procesadorCompu +
-    " , y de un valor final de" +
-    precioCompu
-);
+console.log(persona1.comidaFav = "Donnuts");
+console.log(persona1);
 
-let frase = "Quiero pegarme un tiro"
+// Constructores
 
-console.log(frase.length);
-//String a mayusculas
-console.log(frase.toUpperCase());
-// String a minusculas
-console.log(frase.toLocaleLowerCase());
-// Siempre poner los parentesis al final
+function Persona(nombre,edad,calle){
+  this.nombre = nombre;
+  this.edad = edad;
+  this.calle = calle;
 
-
-// Operadores IN & FOR IN
-console.log("tipo" in Compu1);
-
-// CLASES
-
-class Empleado{
-  constructor(nombre, apellido, documento, codigoTrabajador){
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.documento = documento;
-    this.codigoTrabajador = codigoTrabajador;
-
+  // Metodo
+  this.hablar = function(){
+    console.log("Hola soy " + this.nombre);
   }
+  this.nombreYEdad  = function(separador){
+    this.nombre + separador + this.edad
+  }
+
 }
-let nombreEmpleado = prompt("Ingrese su nombre");
-let apellidoEmpleado = prompt("Ingrese su apellido");
-let documentoEmpleado = prompt("Ingrese su documento");
-let codigoEmpleado = prompt("Ingrese su clave de trabajador");
 
+const persona2 = new Persona("Lisa" , 8 , "Av SiempreViva");
+console.log(persona2);
 
-const empleado1 = new Empleado (nombreEmpleado, apellidoEmpleado, documentoEmpleado, codigoEmpleado)
-console.log(empleado1);
+let auto = "ford"
+
+console.log(auto.length);
+console.log(auto.toLocaleUpperCase());
