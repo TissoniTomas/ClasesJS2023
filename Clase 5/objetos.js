@@ -4,7 +4,7 @@
 
 // Objetos
 
-let nomhre ="Homero";
+let nombre ="Homero";
 let edad = "39";
 let calle = "Av Siempre Viva"
 
