@@ -1,82 +1,231 @@
-const listaCompras = ["Fernet", "Coca Cola", "Hielo","Campari", "Papas", "Pan"]
-console.log(listaCompras);
+// Arrays
 
-console.log(listaCompras[2]);
+// const nombresdeProductos = ["Arroz", "Leche", "Yogurt", "Fideos", "Zanahoria"];
 
-console.log(listaCompras[0] + " y " + listaCompras[1]);
+// const preciosDeProductos = [100, 200, 300, 400];
 
-// Recorriendo la lista
+// Acceder a los elementos individualmente
+// console.log(nombresdeProductos[1]);
+// console.log(preciosDeProductos[2]);
 
-for(let i=0; i<listaCompras.length; i++){
-    console.log("Producto: "+ listaCompras[i]);
-}
+// Reccorer los nombres de los productos
 
-// metodo push
+// for (let i = 0; i < 4; i ++){
+//     console.log(nombresdeProductos[i]);
 
-listaCompras.push("Cigarrillos");
-console.log(listaCompras);
+// }
 
-let agregarProducto = prompt("Queres agregar productos nuevos a la lista?. Responder con SI / NO");
-while (agregarProducto != "NO"){
-    let nuevoProducto = prompt("Agregar el nuevo producto");
-    listaCompras.push(nuevoProducto);
-    agregarProducto = prompt("Queres agregar productos nuevos a la lista?. Responder con SI / NO");
+// Propiedad LENGHT
+// for (let i = 0; i < nombresdeProductos.length; i ++){
+//     console.log(nombresdeProductos[i]);
+// }
 
-}
+// // Agregar elementos al array
 
-console.log(listaCompras);
+// // Agregar al final
+// nombresdeProductos.push("Azucar");
+// nombresdeProductos.push("Cereales");
+// console.log(nombresdeProductos);
 
-// Metodo unshift: Agregara el nuevo elemento del array al principio
-listaCompras.unshift("Gaseosa Vichy");
-console.log(listaCompras);
+// // Agregar al principio
+// nombresdeProductos.unshift("Papa");
+// console.log(nombresdeProductos);
 
-// .pop : Eliminara el ultimo elemento
+// // Quitar los elementos
 
-listaCompras.pop();
-console.log(listaCompras);
+// nombresdeProductos.shift();
 
-// .shift: Eliminara el primer elemento
+// console.log(nombresdeProductos);
 
-listaCompras.shift();
-console.log(listaCompras);
+// nombresdeProductos.pop();
+// console.log(nombresdeProductos);
 
-// Splice: Eliminara desde la posicion indicada como primer parametro, la cantidad de elementos desde ahi indicados en el segundo parametro
+// Eliminar varios elementos
 
-listaCompras.splice(2,2);
-console.log(listaCompras);
+// const nombresDeProductos = [
+//     "Arroz", "Zanahoria", "Papa", "Huevo", "Yogurt",
+// ]
 
-// Concat
-const perros = ["Pancho", "Ana"];
-const gatos = ["Michi", "Juan"];
-const mascotas = perros.concat(gatos);
-console.log(mascotas);
+// nombresDeProductos.splice(0,3);
+// console.log(nombresDeProductos);
 
- // IndexOF
+// Mostrar elementos como string
 
-const nombres = ["Juan", "Pedro", "Gabriel", "Tomas", "Julieta"];
-let nombreAlumno = prompt("Ingrese su nombre");
+// const listaDeProductos = nombresDeProductos.join(", ");
 
-let posicionAlumno = nombres.indexOf(nombreAlumno);
-console.log(posicionAlumno);
+// console.log(listaDeProductos);
 
- // Includes
+// // Metodo Concat - Combina dos arrays en un nuevo
 
-console.log(nombres.includes("Pedro"));
+// const listaDeProductos2 = [
+//     "Cereales",
+//     "Azucar",
+// ]
 
- // ARRAY DE OBJETOS!!!
-const listaHeroes = [];
+//  const combinacionListaProductos = nombresDeProductos.concat(listaDeProductos2);
 
-class Heroe{
-    constructor(id, nombre, energia){
+//  console.log(combinacionListaProductos);
 
-        this.id = id;
+// // Metodo Slice - Obtener copia del array
+
+// const nombresDeProductos = [
+//         "Arroz", "Zanahoria", "Papa", "Huevo", "Yogurt",
+//     ]
+
+//     const copiaProductos = nombresDeProductos.slice(1,4);
+
+//     console.log(copiaProductos);
+
+// // Obtener indice donde se encuentra el elemento
+
+// const nombresDeProductos = [
+//         "Arroz", "Zanahoria", "Papa", "Huevo", "Yogurt",
+//     ]
+
+//     const indiceDeHuevo = nombresDeProductos.indexOf("Huevo");
+
+//     console.log(indiceDeHuevo);
+
+// // Chequear si existe el elemento sin importar el indice de este
+// const nombresDeProductos = [
+//     "Arroz", "Zanahoria", "Papa", "Huevo", "Yogurt",
+// ]
+
+// if (nombresDeProductos.includes("Zanahoria")){
+//     console.log(("Se encuentra Zanahoria"));
+// }
+
+// // Reverse
+
+// const nombresDeProductos = [
+//     "Arroz", "Albahaca", "Zanahoria", "Papa", "Huevo", "Yogurt",
+// ]
+
+// nombresDeProductos.reverse();
+// console.log(nombresDeProductos);
+
+// // FOR OF
+
+//  const nombresDeProductos = [
+//     "Arroz", "Albahaca", "Zanahoria", "Papa", "Huevo", "Yogurt",
+// ]
+
+// for (const nombreDeProducto of  nombresDeProductos){
+//     console.log(nombreDeProducto);
+// }
+
+/** EJEMPLO COMPLETO
+    
+     */
+
+// Objetos
+class Producto {
+
+    constructor (nombre, precio, stock) {
         this.nombre = nombre;
-        this.energia = energia;
+        this.precio = precio;
+        this.stock = stock;
     }
+
 }
 
-const heroe1 = new Heroe(1, "Pipo", 7000);
-listaHeroes.push(heroe1);
-const heroe2 = new Heroe(2,"Pepe", 8000);
-listaHeroes.push(heroe2);
-console.log(listaHeroes);
+// Funciones
+
+function obtenerProducto(nombreDeProducto) {
+
+    let encontrado = false;
+
+    for(const producto of listaDeProductos) {
+
+        // Si la propiedad nombre del objeto, es igual al nombre que paso por parámetro
+        if(producto.nombre === nombreDeProducto) {
+            encontrado = producto;
+            break;
+        }
+
+    }
+
+    return encontrado;
+}
+
+function agregarUnProducto() {
+
+    // Le pido el nombre del producto al usuario
+    let productoAIngresar = prompt("Ingrese el nombre del producto que quiere agregar.");
+
+    // Mientras no obtenga un producto con el nombre que ingresó el usuario, se lo vuelvo a pedir
+    let producto = obtenerProducto(productoAIngresar);
+    while (!producto) {
+        productoAIngresar = prompt("Ingrese un nombre válido de un producto");
+        producto = obtenerProducto(productoAIngresar);
+    }
+
+    // Pedirle el stock
+    let stock = parseInt(prompt("Ingrese el stock que quiere agregar."));
+
+    while (stock <= 0 || stock > producto.stock) {
+        stock = parseInt(prompt("Ingrese un stock válido (Mayor a 0)"));
+    }
+
+    // Una vez que tenemos el nombre y el stock del producto a agregar, lo cargamos al carrito
+    carrito.push({
+        nombre: productoAIngresar,
+        cantidad: stock,
+    });
+
+    alert("PRODUCTO AGREGADO CON ÉXITO :D");
+
+}
+
+function finalizarCompra() {
+
+    let mensaje = "Los productos que agregó son: \n";
+
+    for(const productoAgregadoAlCarrito of carrito) {
+
+        mensaje += productoAgregadoAlCarrito.nombre + " - Cantidad: " + productoAgregadoAlCarrito.cantidad + "\n";
+ 
+    }
+
+    alert(mensaje);
+
+}
+
+// Inicio del programa
+const listaDeProductos = [
+    new Producto("Arroz", 50, 5),
+    new Producto("Albahaca", 25, 10),
+    new Producto("Huevo", 35, 2),
+    new Producto("Papa", 20, 30),
+    new Producto("Yogurt", 75, 2),
+];
+const carrito = [];
+
+let operacion = prompt("Ingrese la operación que quiere realizar: 1- Agregar un producto / 2- Finalizar la compra / 0- Salir");
+
+while (operacion !== "0") {
+
+    // Chequeamos que operación ingresó
+    switch(operacion) {
+
+        case "1":
+
+            agregarUnProducto();
+
+            break;
+
+        case "2":
+
+            finalizarCompra();
+
+            break;
+
+        default:
+
+            alert("OPCIÓN INCORRECTA");
+            break;
+    }
+
+    // Volvemos a solicitar la operación
+    operacion = prompt("Ingrese la operación que quiere realizar: 1- Agregar un producto / 2- Finalizar la compra / 0- Salir");
+}
