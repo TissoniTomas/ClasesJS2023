@@ -72,18 +72,21 @@ function calcularEnvioVerduras(precio) {
   return precio * 0.3;
 }
 
-function calcularEnvio(producto) {
-  let costo = 0;
-  if (producto.categoria === "Legumbres") {
-    costo = calcularEnvioLegumbres(producto.precio);
-  } else if (producto.categoria === "Lacteos") {
-    costo = calcularEnvioLacteos(producto.precio);
-  } else if (producto.categoria === "Verduras") {
-    costo = calcularEnvioVerduras(producto.precio);
-  }
+// function calcularEnvio(producto) {
+//   let costo = 0;
+//   if (producto.categoria === "Legumbres") {
+//     costo = calcularEnvioLegumbres(producto.precio);
+//   } else if (producto.categoria === "Lacteos") {
+//     costo = calcularEnvioLacteos(producto.precio);
+//   } else if (producto.categoria === "Verduras") {
+//     costo = calcularEnvioVerduras(producto.precio);
+//   }
 
-  return costo;
-}
+//   return costo;
+// }
+
+function calcularEnvio(producto, funcionQueCalculaElEnvio) {}
+
 class Producto {
   constructor(nombre, categoria, precio) {
     this.nombre = nombre;
@@ -96,6 +99,64 @@ const producto1 = new Producto("Lentejas", "Legumbres", 200);
 const producto2 = new Producto("Yogurt", "Lacteos", 300);
 const producto3 = new Producto("Zanahoria", "Verduras", 100);
 
-const costoLentejas = calcularEnvio(producto1);
+// const costoLentejas = calcularEnvio(producto1);
+// const costoYogurt = calcularEnvio(producto2);
+// const costoZanahoria = calcularEnvio(producto3);
 
-console.log(costoLentejas);
+const costoLentejas = calcularEnvio(producto1, calcularEnvioLegumbres);
+const costoYogurt = calcularEnvio(producto2, calcularEnvioLacteos);
+const costoZanahoria = calcularEnvio(producto3, calcularEnvioVerduras);
+
+const numeros = [1, 2, 3, 4];
+
+// forEach
+
+numeros.forEach((el) => {
+  console.log(el * 2);
+});
+
+// numeros.forEach((elemento) =>{
+//   console.log("Tu mama se pone en " + elemento);
+// })
+
+// Reduce
+
+const carrito = [
+  {
+   nombre: "Pepino",
+  precio: 200,
+},
+  {
+    nombre:"Yogurt",
+precio:100,
+},
+{
+  nombre:"Lechuga",
+  precio:300,
+}
+
+
+];
+
+// Forma sin reduce
+// let total =0;
+// carrito.forEach((producto)=>{
+//   total +=producto.precio;
+// });
+
+// console.log(total);
+
+const total = carrito.reduce((acc,producto)=>{
+  acc += producto.precio
+  return acc;
+
+}, 0)
+
+console.log(total);
+
+// Agregar campo con reduce
+const carritoConCostoDeEnvio = carrito.reduce((acc, producto) =>{
+  producto.costoDeEnvio= (producto.precio * 0.35);
+  acc.push(producto);
+  return acc;
+}, []);
