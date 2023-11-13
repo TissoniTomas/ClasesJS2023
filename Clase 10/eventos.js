@@ -84,7 +84,6 @@ class Producto{
     }
 }
 // Funciones
-<<<<<<< HEAD
 const ordenarPorPrecio = ()=>{
     const productosOrdenados = listadoProductos.sort((productoA,productoB)=>{
         if(productoA.precio > productoB.precio){
@@ -137,14 +136,6 @@ const renderizarProductos = (productos)=>{
        // Creamos elementos dinamicamente
         const divPadre = document.createElement("div");
         divPadre.className = "col-12 col-sm-4 mb-2 border border-4 mt-4 mx-2 p-5"
-=======
-const renderizarProductos = (productos)=>{
-    const contenedor = document.querySelector("#contenedor");
-    for (const producto of productos){
-       // Creamos elementos dinamicamente
-        const divPadre = document.createElement("div");
-        divPadre.className = "col-12 col-sm-4 mb-2 border mt-4 p-5"
->>>>>>> 4de0f357bb1f3ac7a66c16c42c149a6881ecec69
 
         const divCard = document.createElement("div");
         divCard.classname = "card";
@@ -183,7 +174,6 @@ const listadoProductos = [
     new Producto("Yogurt",200,5),
     new Producto("Remera",500,10),
     new Producto ("Buzo",1000,2),
-<<<<<<< HEAD
     new Producto("Coca Cola", 500, 20),
 ]
 
@@ -192,8 +182,3 @@ renderizarProductos(listadoProductos);
 inicializarInput(); 
 
 inicializarSelect();
-=======
-]
-
-renderizarProductos(listadoProductos);
->>>>>>> 4de0f357bb1f3ac7a66c16c42c149a6881ecec69
