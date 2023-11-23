@@ -50,6 +50,70 @@ const renderizarProductos = ()=>{
 
     }
 }
+// Funciones
+function ordenarPorPrecio() {
+
+    const productosOrdenados = listadoDeProductos.sort( (productoA, productoB) => {
+
+        if(productoA.precio < productoB.precio) {
+            return 1;
+        } else if(productoA.precio > productoB.precio) {
+            return -1;
+        }
+
+        return 0;
+    });
+
+    // Renderizo los productos
+    renderizarProductos(productosOrdenados);
+}
+
+function inicializarSelect() {
+    const select = document.getElementById("selectOrden");
+
+    select.addEventListener("change", () => {
+
+        const value = select.value;
+
+        switch(value) {
+
+            case 'precio':
+
+                ordenarPorPrecio();
+
+                break;
+
+            case 'nombre':
+
+                // Ordenamos por nombre...
+                break;
+        }
+    });
+}
+
+function inicializarInput() {
+
+    const input = document.getElementById("buscarProducto");
+
+    input.addEventListener("keyup", () => {
+
+        // Filtramos los productos por lo que puso el usuario en el input
+        const value = input.value;
+
+        const productosFiltrados = listadoDeProductos.filter( (producto) => {
+            return producto
+                .nombre
+                .toLowerCase()
+                .includes(
+                    value.toLowerCase()
+                );
+        });
+
+        // Renderizo los productos
+        renderizarProductos(productosFiltrados);
+
+    });
+}
 
 // Inicio del programa
 
