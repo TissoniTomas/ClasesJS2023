@@ -1,0 +1,25 @@
+.divFlex{
+    display: flex;
+    align-items: center;
+}
+
+.asiento{
+    width: 50px;
+    height: 50px;
+    margin: 1rem;
+    
+}
+
+.seleccionable{
+    border: 1px solid black;
+    
+}
+
+.asiento.seleccionable.comprado{
+    background-color: red;
+
+}
+
+.asiento.seleccionable.seleccionado{
+    background-color: blue;
+}
